@@ -9,7 +9,7 @@
     <groupId>com.sparkjava</groupId>
     <artifactId>spark-core</artifactId>
     <packaging>bundle</packaging>
-    <version>2.9.4-SNAPSHOT</version>
+    <version>0.0.1-SNAPSHOT</version>
     <name>Spark</name>
     <description>A micro framework for creating web applications in Kotlin and Java 8 with minimal effort</description>
     <url>http://www.sparkjava.com</url>
@@ -29,12 +29,16 @@
     </developers>
 
     <properties>
-        <java.version>1.8</java.version>
-        <jetty.version>9.4.48.v20220622</jetty.version>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <powermock.version>1.7.4</powermock.version>
-        <mockito.version>1.10.19</mockito.version>
-    </properties>
+		<jdk.version>1.8</jdk.version>
+		<spring.version>5.1.2.RELEASE</spring.version>
+		<junit.version>4.11</junit.version>
+		<log4j.version>1.2.17</log4j.version>
+		<sonar.host.url>http:172.31.94.137:9000/</sonar.host.url>
+		<sonar.login>admin</sonar.login>
+		<sonar.password>admin</sonar.password>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+	</properties>
 
     <dependencies>
         <!-- LOGGING DEPENDENCIES -->
@@ -126,6 +130,20 @@
         </dependency>
     </dependencies>
 
+    <distributionManagement>
+	    <repository>
+	      <id>nexus</id>
+	      <name>Landmark Technologies Releases Nexus Repository</name>
+	      <url>http://172.31.82.255:8081/repository/Jenkins_deploy_releases/</url>
+	    </repository>
+	    
+	    <snapshotRepository>
+	      <id>nexus</id>
+	      <name>Landmark Technologies Snapshot Nexus Repository </name>
+	      <url>http://172.31.82.255:8081/repository/Jenkins-deploy_snapshot/</url>
+	    </snapshotRepository>
+	    
+	</distributionManagement>
     <build>
 
         <resources>
